@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
 
-public class Lesson1 {
+public class Basic_Selector {
   
 	// Tìm Element để thực thi, kiểm thử là phần quan trọng, để test cho element nào thì mình phải lấy đc nó
 	// Có 2 cách chính để lấy element: 
@@ -44,7 +44,7 @@ public class Lesson1 {
 	WebDriver _driver;
 	Utilities _utils;
 	
-	public Lesson1() {
+	public Basic_Selector() {
 		// Tạo đối tượng driver tương ứng với browser cần test
 		// Trong trường hợp này đang test cho Chrome 
 

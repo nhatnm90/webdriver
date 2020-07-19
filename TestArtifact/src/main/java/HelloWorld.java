@@ -1,6 +1,6 @@
 import org.testng.annotations.*;
 
-public class NewTest {
+public class HelloWorld {
   
 	// Anotation là những cái có chữ @ và đc đặt ngay trên method.
 	// Vd: @BeforeTest, @Test, @AfterMethod... 
