@@ -11,25 +11,53 @@ import org.openqa.selenium.WebElement;
  *
  */
 public class Utilities {
-	
+
+	private static final String FILE_CONFIG = "\\config.properties";
 	private WebDriver _driver;
 	public Utilities(WebDriver driver) {
 		this._driver = driver;
 	}
-	
+
+	/*
+	* Gọi để thêm 1 số task vào trong danh sách
+	* @param numberOfTask số lượng task cần thêm vào
+	* @param taskPrefix tiếp đầu ngữ của mỗi task
+	* Task name đc tạo tự động theo cấu trúc tiếp đầu ngữ _ ramdom GUID ID
+	*/
 	public void addListTask(int numberOfTask, String taskPrefix) {
 		for (int i = 0; i < numberOfTask; i++) {
 			String taskName = taskPrefix + "_"+ java.util.UUID.randomUUID();
 			addTask(taskName);
 		}
 	}
-	
+
+	/*
+	 * Gọi để add task vào cho chương trình có thể khởi tạo task ban đầu
+	 * @param taskName tên của task cần tạo
+	 */
 	public void addTask(String taskName) {
-		WebElement btnAddNewTask = this._driver.findElement(By.id("btnAddNewTask"));
-		btnAddNewTask.click();
-		WebElement txtTaskName = this._driver.findElement(By.id("txtTaskName"));
-		txtTaskName.sendKeys(taskName);
-		WebElement btnSubmitTask = this._driver.findElement(By.id("btnSubmitTask"));
-		btnSubmitTask.click();
+		this.buttonClick("btnAddNewTask");
+		this._driver.findElement(By.id("txtTaskName")).sendKeys(taskName);
+		this.buttonClick("btnSubmitTask");
+	}
+
+	/*
+	* Gọi để thực hiện sực kiện click cho 1 button theo id
+	* @param buttonId id của button cần thực hiện sự kiện click
+	*/
+	public void buttonClick(String buttonId) {
+		this._driver.findElement(By.id(buttonId)).click();
+	}
+
+	/*
+	* Gọi để chương trình dừng lại đợi trước khi thực hiện thao tác tiếp theo
+	* @param miliseconds phần trăm giây ngừng lại 1 * 1000 = 1s
+	*/
+	public void sleep(int miliseconds) {
+		try {
+			Thread.sleep(miliseconds);
+		}
+		catch (InterruptedException ex) {
+		}
 	}
 }
