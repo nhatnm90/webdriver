@@ -84,6 +84,9 @@ public class Lesson2 {
 		this._utils.addListTask(numberOfAddingTask, "test task");
 		
 		// Assert
+		// Tìm list các task đc add vào bằng CSS Selector
+		// -> lấy tất cả các elements có tagname là tr và có id bắt đầu bằng tr_
+		// dấu mũ (^) lấy giá trị bắt đầu bằng ...
 		int totalItem = _driver.findElements(By.cssSelector("tr[id^=tr_")).size();
 		assertEquals(numberOfAddingTask, totalItem, "Should have " + numberOfAddingTask + " row in the list task");
 	}
