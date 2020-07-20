@@ -34,7 +34,14 @@ public class Configuration {
     }
 
     public static String getHostName() {
-        Properties prop = Configuration.getConfiguration();
-        return prop.getProperty("host");
+        return Configuration.getConfiguration().getProperty("host");
+    }
+
+    public static String getConfigByKey(String keyname) {
+        return Configuration.getConfiguration().getProperty(keyname);
+    }
+
+    public static Properties getConfig() {
+        return Configuration.getConfiguration();
     }
 }
