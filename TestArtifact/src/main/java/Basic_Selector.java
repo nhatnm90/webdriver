@@ -60,8 +60,8 @@ public class Basic_Selector {
 		// Chỉ chạy 1 lần duy nhất khi bắt đầu chạy test chương trình 
 		
 		// Mở website cần test 
-		// _driver.get("https://automationhn.github.io/management");
-		_driver.get("http://localhost:3000/management");
+		 _driver.get("https://automationhn.github.io/management");
+//		_driver.get("http://localhost:3000/management");
 		 
 		// Phóng to cửa sổ 
 		_driver.manage().window().maximize();
@@ -107,8 +107,8 @@ public class Basic_Selector {
 		String expectedSortDesc = "LEVEL - DESC";
 		
 		// Action
-		WebElement labelSort = this._driver.findElement(By.name("lbSortDesc"));
-		
+//		WebElement labelSort = this._driver.findElement(By.name("lbSortDesc"));
+		WebElement labelSort = this._driver.findElement(By.cssSelector("span[id=spSort]"));
 		// Assert
 		assertNotNull(labelSort, "The labelSort should be existed");
 		assertEquals(expectedSortDesc, labelSort.getText(), "The default value of label Sort should be " + expectedSortDesc);
