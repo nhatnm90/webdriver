@@ -49,6 +49,7 @@ public class Basic_Selector {
 		// Trong trường hợp này đang test cho Chrome 
 
 		//_driver = new FirefoxDriver();
+		System.setProperty("webdriver.chrome.driver", "D:\\learn\\auto\\webdriver-driver\\chromedriver\\84\\chromedriver.exe");
 		_driver = new ChromeDriver();
 		_utils = new Utilities(_driver);
 	}
@@ -60,8 +61,7 @@ public class Basic_Selector {
 		// Chỉ chạy 1 lần duy nhất khi bắt đầu chạy test chương trình 
 		
 		// Mở website cần test 
-		 _driver.get("https://automationhn.github.io/management");
-//		_driver.get("http://localhost:3000/management");
+		 _driver.get(Configuration.getHostName());
 		 
 		// Phóng to cửa sổ 
 		_driver.manage().window().maximize();

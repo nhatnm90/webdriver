@@ -1,5 +1,8 @@
 import org.testng.annotations.*;
 
+import java.util.Enumeration;
+import java.util.Properties;
+
 public class HelloWorld {
   
 	// Anotation là những cái có chữ @ và đc đặt ngay trên method.
@@ -9,7 +12,6 @@ public class HelloWorld {
 	public void init() {
 		// Chỉ chạy 1 lần duy nhất khi bắt đầu chạy test chương trình 
 		System.out.println("1.  Before Test");
-		
 		// Để tạo driver test, khởi tạo những thứ chạy 1 lần cho toàn chương trình test 
 	}
 	
