@@ -3,6 +3,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 //import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.*;
 
@@ -48,15 +49,18 @@ public class XPath_Selector {
 	Utilities _utils;
 
 	public XPath_Selector() {
-		// Tạo đối tượng driver tương ứng với browser cần test
-		// Trong trường hợp này đang test cho Chrome 
+		if (Constant.Browser.Chrome.toString().equals(Configuration.getConfigByKey("browser"))) {
+			if (Configuration.getConfigByKey("os").equals(Constant.OS.Windows.toString())) {
+				System.setProperty("webdriver.chrome.driver",  "D:\\learn\\auto\\webdriver-driver\\chromedriver\\84\\chromedriver.exe");
+			}
+			_driver = new ChromeDriver();
+		} else {
+			if (Configuration.getConfigByKey("os").equals(Constant.OS.Windows.toString())) {
+				System.setProperty("webdriver.chrome.driver",  "D:\\learn\\auto\\webdriver-driver\\geckodriver\\geckodriver.exe");
+			}
+			_driver = new FirefoxDriver();
+		}
 
-		// Tạo driver cho browser dùng để test
-		System.setProperty("webdriver.chrome.driver", "D:\\learn\\auto\\webdriver-driver\\chromedriver\\84\\chromedriver.exe");
-		_driver = new ChromeDriver();
-
-//		System.setProperty("webdriver.chrome.driver", "D:\\learn\\auto\\webdriver-driver\\geckodriver\\geckodriver.exe");
-//		_driver = new FirefoxDriver();
 		_utils = new Utilities(_driver);
 	}
 
