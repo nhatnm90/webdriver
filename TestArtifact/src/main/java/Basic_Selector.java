@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.*;
 
 public class Basic_Selector {
@@ -53,11 +54,16 @@ public class Basic_Selector {
 				System.setProperty("webdriver.chrome.driver",  "D:\\learn\\auto\\webdriver-driver\\chromedriver\\84\\chromedriver.exe");
 			}
 			_driver = new ChromeDriver();
-		} else {
+		} else if (Constant.Browser.Firefox.toString().equals(Configuration.getConfigByKey("browser"))) {
 			if (Configuration.getConfigByKey("os").equals(Constant.OS.Windows.toString())) {
 				System.setProperty("webdriver.chrome.driver",  "D:\\learn\\auto\\webdriver-driver\\geckodriver\\geckodriver.exe");
 			}
 			_driver = new FirefoxDriver();
+		} else if (Constant.Browser.Safari.toString().equals(Configuration.getConfigByKey("browser"))) {
+			if (Configuration.getConfigByKey("os").equals(Constant.OS.Windows.toString())) {
+				System.setProperty("webdriver.chrome.driver",  "D:\\learn\\auto\\webdriver-driver\\geckodriver\\geckodriver.exe");
+			}
+			_driver = new SafariDriver();
 		}
 
 		_utils = new Utilities(_driver);

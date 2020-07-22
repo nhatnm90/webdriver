@@ -7,6 +7,7 @@ public class Constant {
 
     public static enum Browser {
         Chrome,
-        Firefox
+        Firefox,
+        Safari
     }
 }
