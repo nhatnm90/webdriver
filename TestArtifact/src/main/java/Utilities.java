@@ -30,16 +30,6 @@ public class Utilities {
 	}
 
 	/*
-	 * Gọi để add task vào cho chương trình có thể khởi tạo task ban đầu
-	 * @param taskName tên của task cần tạo
-	 */
-	public void addTask(String taskName) {
-		this.buttonClick("btnAddNewTask");
-		this._driver.findElement(By.id("txtTaskName")).sendKeys(taskName);
-		this.buttonClick("btnSubmitTask");
-	}
-
-	/*
 	* Gọi để thực hiện sực kiện click cho 1 button theo id
 	* @param buttonId id của button cần thực hiện sự kiện click
 	*/
@@ -57,5 +47,15 @@ public class Utilities {
 		}
 		catch (InterruptedException ex) {
 		}
+	}
+
+	/*
+	 * Gọi để add task vào cho chương trình có thể khởi tạo task ban đầu
+	 * @param taskName tên của task cần tạo
+	 */
+	private void addTask(String taskName) {
+		this.buttonClick("btnAddNewTask");
+		this._driver.findElement(By.id("txtTaskName")).sendKeys(taskName);
+		this.buttonClick("btnSubmitTask");
 	}
 }

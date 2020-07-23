@@ -46,18 +46,8 @@ public class CSSSelector {
 	Utilities _utils;
 	
 	public CSSSelector() {
-		if (Constant.Browser.Chrome.toString().equals(Configuration.getConfigByKey("browser"))) {
-			if (Configuration.getConfigByKey("os").equals(Constant.OS.Windows.toString())) {
-				System.setProperty("webdriver.chrome.driver",  "D:\\learn\\auto\\webdriver-driver\\chromedriver\\84\\chromedriver.exe");
-			}
-			_driver = new ChromeDriver();
-		} else {
-			if (Configuration.getConfigByKey("os").equals(Constant.OS.Windows.toString())) {
-				System.setProperty("webdriver.chrome.driver",  "D:\\learn\\auto\\webdriver-driver\\geckodriver\\geckodriver.exe");
-			}
-			_driver = new FirefoxDriver();
-		}
-
+		// Tạo đối tượng driver tương ứng với browser cần test
+		_driver = DriverFactory.generateWebDriver();
 		_utils = new Utilities(_driver);
 	}
 
@@ -66,7 +56,6 @@ public class CSSSelector {
 		// Khai báo driver
 		// Khởi tạo, mở trang web
 		// Chỉ chạy 1 lần duy nhất khi bắt đầu chạy test chương trình
-
 
 		// Mở website cần test 
 		 _driver.get(Configuration.getHostName());
