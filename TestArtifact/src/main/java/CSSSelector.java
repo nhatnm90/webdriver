@@ -9,7 +9,7 @@ import org.testng.annotations.*;
 
 import java.util.List;
 
-public class CSS_Selector {
+public class CSSSelector {
   
 	// Tìm Element để thực thi, kiểm thử là phần quan trọng, để test cho element nào thì mình phải lấy đc nó
 	// Có 2 cách chính để lấy element: 
@@ -45,7 +45,7 @@ public class CSS_Selector {
 	WebDriver _driver;
 	Utilities _utils;
 	
-	public CSS_Selector() {
+	public CSSSelector() {
 		if (Constant.Browser.Chrome.toString().equals(Configuration.getConfigByKey("browser"))) {
 			if (Configuration.getConfigByKey("os").equals(Constant.OS.Windows.toString())) {
 				System.setProperty("webdriver.chrome.driver",  "D:\\learn\\auto\\webdriver-driver\\chromedriver\\84\\chromedriver.exe");

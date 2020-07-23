@@ -12,7 +12,7 @@ import java.util.List;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotEquals;
 
-public class XPath_Selector {
+public class XPathSelector {
 
 	// Tìm Element để thực thi, kiểm thử là phần quan trọng, để test cho element nào thì mình phải lấy đc nó
 	// Có 2 cách chính để lấy element:
@@ -48,7 +48,7 @@ public class XPath_Selector {
 	WebDriver _driver;
 	Utilities _utils;
 
-	public XPath_Selector() {
+	public XPathSelector() {
 		if (Constant.Browser.Chrome.toString().equals(Configuration.getConfigByKey("browser"))) {
 			if (Configuration.getConfigByKey("os").equals(Constant.OS.Windows.toString())) {
 				System.setProperty("webdriver.chrome.driver",  "D:\\learn\\auto\\webdriver-driver\\chromedriver\\84\\chromedriver.exe");

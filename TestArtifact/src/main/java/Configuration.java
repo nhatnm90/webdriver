@@ -8,9 +8,10 @@ import java.nio.file.Paths;
 import java.util.Properties;
 
 public class Configuration {
+    private static final String FILE_CONFIG = "config.properties";
 
     private static Properties getConfiguration() {
-        URL resource = Configuration.class.getResource("config.properties");
+        URL resource = Configuration.class.getResource(FILE_CONFIG);
         File file  = null;
         try {
             file = Paths.get(resource.toURI()).toFile();

@@ -11,8 +11,6 @@ import org.openqa.selenium.WebElement;
  *
  */
 public class Utilities {
-
-	private static final String FILE_CONFIG = "\\config.properties";
 	private WebDriver _driver;
 	public Utilities(WebDriver driver) {
 		this._driver = driver;

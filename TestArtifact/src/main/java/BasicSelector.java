@@ -9,7 +9,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.*;
 
-public class Basic_Selector {
+public class BasicSelector {
   
 	// Tìm Element để thực thi, kiểm thử là phần quan trọng, để test cho element nào thì mình phải lấy đc nó
 	// Có 2 cách chính để lấy element: 
@@ -45,27 +45,9 @@ public class Basic_Selector {
 	WebDriver _driver;
 	Utilities _utils;
 	
-	public Basic_Selector() {
+	public BasicSelector() {
 		// Tạo đối tượng driver tương ứng với browser cần test
-		// Trong trường hợp này đang test cho Chrome 
-
-		if (Constant.Browser.Chrome.toString().equals(Configuration.getConfigByKey("browser"))) {
-			if (Configuration.getConfigByKey("os").equals(Constant.OS.Windows.toString())) {
-				System.setProperty("webdriver.chrome.driver",  "D:\\learn\\auto\\webdriver-driver\\chromedriver\\84\\chromedriver.exe");
-			}
-			_driver = new ChromeDriver();
-		} else if (Constant.Browser.Firefox.toString().equals(Configuration.getConfigByKey("browser"))) {
-			if (Configuration.getConfigByKey("os").equals(Constant.OS.Windows.toString())) {
-				System.setProperty("webdriver.chrome.driver",  "D:\\learn\\auto\\webdriver-driver\\geckodriver\\geckodriver.exe");
-			}
-			_driver = new FirefoxDriver();
-		} else if (Constant.Browser.Safari.toString().equals(Configuration.getConfigByKey("browser"))) {
-			if (Configuration.getConfigByKey("os").equals(Constant.OS.Windows.toString())) {
-				System.setProperty("webdriver.chrome.driver",  "D:\\learn\\auto\\webdriver-driver\\geckodriver\\geckodriver.exe");
-			}
-			_driver = new SafariDriver();
-		}
-
+		_driver = DriverFactory.generateWebDriver();
 		_utils = new Utilities(_driver);
 	}
 
