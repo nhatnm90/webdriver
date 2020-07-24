@@ -1,13 +1,12 @@
-import static org.testng.Assert.*;
-
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.*;
+import utils.Configuration;
+import utils.DriverFactory;
+import utils.Utils;
+
+import static org.testng.Assert.*;
 
 public class BasicSelector {
   
@@ -43,12 +42,12 @@ public class BasicSelector {
 	
 	// Cầu nối giữa browser và scripts test cho 1 website nào đó 
 	WebDriver _driver;
-	Utilities _utils;
+	Utils _utils;
 	
 	public BasicSelector() {
 		// Tạo đối tượng driver tương ứng với browser cần test
 		_driver = DriverFactory.generateWebDriver();
-		_utils = new Utilities(_driver);
+		_utils = new Utils(_driver);
 	}
 
 	@BeforeTest

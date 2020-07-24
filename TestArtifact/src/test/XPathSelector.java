@@ -1,16 +1,15 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-//import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.*;
-
-import java.util.List;
+import utils.Configuration;
+import utils.DriverFactory;
+import utils.Utils;
 
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertNotEquals;
+
+//import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class XPathSelector {
 
@@ -46,12 +45,12 @@ public class XPathSelector {
 
 	// Cầu nối giữa browser và scripts test cho 1 website nào đó
 	WebDriver _driver;
-	Utilities _utils;
+	Utils _utils;
 
 	public XPathSelector() {
 		// Tạo đối tượng driver tương ứng với browser cần test
 		_driver = DriverFactory.generateWebDriver();
-		_utils = new Utilities(_driver);
+		_utils = new Utils(_driver);
 	}
 
 	@BeforeTest

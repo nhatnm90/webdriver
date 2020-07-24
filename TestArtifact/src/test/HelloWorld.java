@@ -1,8 +1,5 @@
 import org.testng.annotations.*;
 
-import java.util.Enumeration;
-import java.util.Properties;
-
 public class HelloWorld {
   
 	// Anotation là những cái có chữ @ và đc đặt ngay trên method.

@@ -1,18 +1,15 @@
+package utils;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
-/**
- * 
- */
- 
 /**
  * @author nhatnguyen
  *
  */
-public class Utilities {
+public class Utils {
 	private WebDriver _driver;
-	public Utilities(WebDriver driver) {
+	public Utils(WebDriver driver) {
 		this._driver = driver;
 	}
 
