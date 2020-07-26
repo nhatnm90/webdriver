@@ -7,27 +7,26 @@ import org.openqa.selenium.safari.SafariDriver;
 
 public class DriverFactory {
 
-	private static final String FILE_CONFIG = "config.properties";
-	private static final String DRIVER_CHROME = "D:\\learn\\auto\\webdriver-driver\\chromedriver\\84\\chromedriver.exe";
+	private static final String DRIVER_CHROME_NAME = "webdriver.chrome.driver";
+	private static final String DRIVER_CHROME_FILE = "D:\\learn\\auto\\webdriver-driver\\chromedriver\\84\\chromedriver.exe";
+	private static final String DRIVER_FIREFOX_NAME = "webdriver.chrome.driver";
 	private static final String DRIVER_FIREFOX = "D:\\learn\\auto\\webdriver-driver\\geckodriver\\geckodriver.exe";
-	private static final String DRIVER_SAFARI = "";
+	private static final String OS_KEY = "os";
+	private static final String BROWSER_KEY = "browser";
 
 	public static WebDriver generateWebDriver() {
 		WebDriver driver = null;
-		if (Constant.Browser.Chrome.toString().equals(Configuration.getConfigByKey("browser"))) {
-			if (Configuration.getConfigByKey("os").equals(Constant.OS.Windows.toString())) {
-				System.setProperty("webdriver.chrome.driver", DRIVER_CHROME);
+		if (Constant.Browser.Chrome.toString().equals(Configuration.getConfigByKey(BROWSER_KEY))) {
+			if (Configuration.getConfigByKey(OS_KEY).equals(Constant.OS.Windows.toString())) {
+				System.setProperty(DRIVER_CHROME_NAME, DRIVER_CHROME_FILE);
 			}
 			driver = new ChromeDriver();
-		} else if (Constant.Browser.Firefox.toString().equals(Configuration.getConfigByKey("browser"))) {
-			if (Configuration.getConfigByKey("os").equals(Constant.OS.Windows.toString())) {
-				System.setProperty("webdriver.chrome.driver", DRIVER_FIREFOX);
+		} else if (Constant.Browser.Firefox.toString().equals(Configuration.getConfigByKey(BROWSER_KEY))) {
+			if (Configuration.getConfigByKey(OS_KEY).equals(Constant.OS.Windows.toString())) {
+				System.setProperty(DRIVER_FIREFOX_NAME, DRIVER_FIREFOX);
 			}
 			driver = new FirefoxDriver();
-		} else if (Constant.Browser.Safari.toString().equals(Configuration.getConfigByKey("browser"))) {
-			if (Configuration.getConfigByKey("os").equals(Constant.OS.Windows.toString())) {
-				System.setProperty("webdriver.chrome.driver", DRIVER_SAFARI);
-			}
+		} else if (Constant.Browser.Safari.toString().equals(Configuration.getConfigByKey(BROWSER_KEY))) {
 			driver = new SafariDriver();
 		}
 		return driver;
