@@ -1,5 +1,3 @@
-package utils;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -15,20 +13,19 @@ public class DriverFactory {
 	private static final String BROWSER_KEY = "browser";
 
 	public static WebDriver generateWebDriver() {
-		WebDriver driver = null;
 		if (Constant.Browser.Chrome.toString().equals(Configuration.getConfigByKey(BROWSER_KEY))) {
 			if (Configuration.getConfigByKey(OS_KEY).equals(Constant.OS.Windows.toString())) {
 				System.setProperty(DRIVER_CHROME_NAME, DRIVER_CHROME_FILE);
 			}
-			driver = new ChromeDriver();
+			return new ChromeDriver();
 		} else if (Constant.Browser.Firefox.toString().equals(Configuration.getConfigByKey(BROWSER_KEY))) {
 			if (Configuration.getConfigByKey(OS_KEY).equals(Constant.OS.Windows.toString())) {
 				System.setProperty(DRIVER_FIREFOX_NAME, DRIVER_FIREFOX);
 			}
-			driver = new FirefoxDriver();
+			return new FirefoxDriver();
 		} else if (Constant.Browser.Safari.toString().equals(Configuration.getConfigByKey(BROWSER_KEY))) {
-			driver = new SafariDriver();
+			return new SafariDriver();
 		}
-		return driver;
+		return null;
 	}
 }

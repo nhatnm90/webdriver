@@ -1,5 +1,3 @@
-package utils;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -10,7 +8,7 @@ import java.nio.file.Paths;
 import java.util.Properties;
 
 public class Configuration {
-    private static final String FILE_CONFIG = "..\\config.properties";
+    private static final String FILE_CONFIG = "config.properties";
 
     private static Properties getConfiguration() {
         URL resource = Configuration.class.getResource(FILE_CONFIG);

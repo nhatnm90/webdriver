@@ -2,9 +2,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.*;
-import utils.Configuration;
-import utils.DriverFactory;
-import utils.Utils;
 
 import static org.testng.Assert.*;
 

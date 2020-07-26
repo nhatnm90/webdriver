@@ -3,13 +3,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.*;
-import utils.Configuration;
-import utils.DriverFactory;
-import utils.Utils;
 
 import static org.testng.Assert.assertEquals;
-
-//import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class XPathSelector {
 

@@ -1,5 +1,3 @@
-package utils;
-
 public class Constant {
     public static enum OS {
         Windows,
